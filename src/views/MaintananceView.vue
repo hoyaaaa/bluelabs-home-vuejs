@@ -88,8 +88,10 @@ a:hover {
 svg {
   width: 75px;
   margin-top: 1em;
-}
 .cls-1 {
-  fill:#fff;
+  fill: #fff;
+}
+#app {
+  fill: #fffa;
 }
 </style>
