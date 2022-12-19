@@ -89,4 +89,7 @@ svg {
   width: 75px;
   margin-top: 1em;
 }
+.cls-1 {
+  fill:#fff;
+}
 </style>
