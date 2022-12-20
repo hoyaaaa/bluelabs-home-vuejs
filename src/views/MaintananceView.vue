@@ -1,13 +1,6 @@
 <template>
   <article>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202.24 202.24">
-      <defs>
-        <!-- <style>
-          .cls-1 {
-            fill: #fff;
-          }
-        </style> -->
-      </defs>
       <title>Asset 3</title>
       <g id="Layer_2" data-name="Layer 2">
         <g id="Capa_1" data-name="Capa 1">
@@ -48,7 +41,7 @@ body {
   text-align: center;
   padding: 0;
   background: #d6433b;
-  color: #fff;
+  color: #fffa;
   font-family: Open Sans;
 }
 h1 {
@@ -88,6 +81,7 @@ a:hover {
 svg {
   width: 75px;
   margin-top: 1em;
+}
 .cls-1 {
   fill: #fff;
 }
