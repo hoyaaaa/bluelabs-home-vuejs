@@ -13,7 +13,7 @@ export default {
   name: 'CountNumber',
   props: {
     to: {
-      type: String,
+      type: Number,
       required: true
     }
   },
