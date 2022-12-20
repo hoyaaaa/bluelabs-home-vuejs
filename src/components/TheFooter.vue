@@ -1,11 +1,6 @@
 <template>
   <v-footer padless>
-    <v-img
-      src="../assets/footer/background.png"
-      srcset="../assets/footer/background@2x.png 2x,
-              ../assets/footer/background@3x.png 3x"
-      height="300"
-    >
+    <v-img src="@/assets/footer/background.png" height="300">
       <v-card height="50" color="transparent" class="px-16">
         <v-btn
           v-for="link in links"
@@ -48,13 +43,7 @@
           <div>Copyright ⓒ 2022 BLUELABS. ALL RIGHTS RESERVED.</div>
         </div>
         <div>
-          <v-img
-            src="../assets/footer/white-logo.png"
-            srcset="../assets/footer/white-logo@2x.png 2x,
-                    ../assets/footer/white-logo@3x.png 3x"
-            height="49"
-            width="187"
-          />
+          <v-img src="@/assets/footer/white-logo.png" height="49" width="187" />
         </div>
       </v-card>
       <!-- </v-col>
