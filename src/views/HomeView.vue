@@ -1,5 +1,24 @@
 <template>
   <div>
+    <the-app-bar absolute dark v-bind:color="'transparent'" />
+    <v-row align="center" justify="center">
+      <v-col class="text-center pa-0" cols="12">
+        <v-parallax src="@/assets/home/sea-top.png">
+          <v-row align="center" justify="center">
+            <v-col class="text-center" cols="12">
+              <h1 class="text-h3 font-weight-bold mb-4">
+                성능 또한 친환경성 만큼 중요합니다.
+              </h1>
+              <v-chip class="ma-2">#활성탄 대비 3배 높은 중금속 흡착력</v-chip>
+              <v-chip class="ma-2"
+                >#기존 활성탄이 흡착할 수 없는 니켈 (Ni), 아연 (Zn) 흡착
+                가능</v-chip
+              >
+            </v-col>
+          </v-row>
+        </v-parallax>
+      </v-col>
+    </v-row>
     <v-row align="center" justify="center">
       <v-col cols="12">
         <v-row class="my-16" align="center" justify="center">
@@ -42,7 +61,7 @@
       <v-col class="text-center pa-0" cols="7"> </v-col>
       <v-row align="center" justify="center">
         <v-col class="text-center pa-0" cols="12">
-          <v-parallax src="@/assets/home/sea.png">
+          <v-parallax src="@/assets/home/sea-bottom.png">
             <v-row align="center" justify="center">
               <v-col class="text-center" cols="12">
                 <h1 class="text-h3 font-weight-bold mb-4">
@@ -71,13 +90,15 @@
 </template>
 
 <script>
-import CountNumber from '../components/CountNumber'
-import TheFooter from '../components/TheFooter'
+import TheAppBar from '@/components/TheAppBar'
+import CountNumber from '@/components/CountNumber'
+import TheFooter from '@/components/TheFooter'
 
 export default {
   name: 'Home',
 
   components: {
+    TheAppBar,
     CountNumber,
     TheFooter
   }
