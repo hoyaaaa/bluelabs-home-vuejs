@@ -25,7 +25,7 @@
           <v-col class="py-2 mb-10" cols="5">
             <h2>지자체에서 <br />해양배출에 쏟는 비용</h2>
             <h5>연간</h5>
-            <h1>4,500,000,000 원</h1>
+            <h1><count-number v-bind:to="4500000000" /> 원</h1>
           </v-col>
         </v-row>
       </v-col>
@@ -71,12 +71,14 @@
 </template>
 
 <script>
+import CountNumber from '../components/CountNumber'
 import TheFooter from '../components/TheFooter'
 
 export default {
   name: 'Home',
 
   components: {
+    CountNumber,
     TheFooter
   }
 }
