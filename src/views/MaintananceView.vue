@@ -1,12 +1,12 @@
 <template>
   <div class="container">
-    <h1 class="LOGO">WEBSITE TITLE<span> Desciption</span></h1>
+    <h1 class="LOGO">BLUELABS</h1>
     <h1>We&rsquo;ll be back soon!</h1>
     <div class="font">
       <p>
         Sorry for the inconvenience but we&rsquo;re performing some maintenance
         at the moment. If you need to you can always
-        <a href="mailto:team@email.com">contact us</a> , otherwise repairs are
+        <a href="mailto:contact@bluelabs.kr">contact us</a> , otherwise repairs are
         in progress and we&rsquo;ll be back online shortly!
       </p>
       <p>&mdash; The Team</p>
@@ -15,7 +15,6 @@
 </template>
 
 <style>
-@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
 @import url('https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text');
 
 body {
@@ -34,9 +33,6 @@ body {
   text-align: left;
   width: 650px;
   margin: 0 auto;
-}
-.font {
-  font-family: 'Great Vibes', cursive;
 }
 .LOGO {
   font-family: 'Libre Barcode 128 Text', cursive;
