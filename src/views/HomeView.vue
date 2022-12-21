@@ -1,26 +1,21 @@
 <template>
   <div>
-    <the-app-bar absolute dark v-bind:color="'transparent'" />
     <v-row align="center" justify="center">
-      <v-col class="text-center pa-0" cols="12">
-        <v-parallax src="@/assets/home/sea-top.png">
+      <v-img :aspect-ratio="1920 / 1000" src="@/assets/home/sea-top.png">
+        <v-layout class="flex-column fill-height mx-16">
           <v-row align="center" justify="center">
-            <v-col class="text-center" cols="12">
-              <h1 class="text-h3 font-weight-bold mb-4">
-                성능 또한 친환경성 만큼 중요합니다.
-              </h1>
-              <v-chip class="ma-2">#활성탄 대비 3배 높은 중금속 흡착력</v-chip>
-              <v-chip class="ma-2"
-                >#기존 활성탄이 흡착할 수 없는 니켈 (Ni), 아연 (Zn) 흡착
-                가능</v-chip
-              >
+            <v-col class="pa-0" cols="12">
+              <the-app-bar absolute dark v-bind:color="'transparent'" />
+            </v-col>
+            <v-col class="flex-column fill-height pa-0" cols="12">
+              <slider />
             </v-col>
           </v-row>
-        </v-parallax>
-      </v-col>
+        </v-layout>
+      </v-img>
     </v-row>
     <v-row align="center" justify="center">
-      <v-col cols="12">
+      <v-responsive :aspect-ratio="1548 / 1920">
         <v-row class="my-16" align="center" justify="center">
           <v-col class="text-center py-2" cols="12">
             <img src="@/assets/home/oyster-icon.png" />
@@ -38,52 +33,51 @@
           </v-col>
         </v-row>
         <v-row class="my-16" align="end" justify="center">
-          <v-col class="py-2" cols="5" offset="2">
+          <v-col class="py-2" cols="4" offset="2">
             <v-img src="@/assets/home/graph.png" />
           </v-col>
-          <v-col class="py-2 mb-10" cols="5">
+          <v-col class="py-2 mb-10" cols="6">
             <h2>지자체에서 <br />해양배출에 쏟는 비용</h2>
             <h5>연간</h5>
             <h1><count-number v-bind:to="4500000000" /> 원</h1>
           </v-col>
         </v-row>
-      </v-col>
+      </v-responsive>
+    </v-row>
+    <v-row>
       <v-col class="text-center pa-0" cols="5">
-        <v-img
-          src="https://live.staticflickr.com/4529/26697577659_7e5d841da7_c.jpg"
-        />
-        <!-- <v-img
-          src="@/assets/home/white-grain.png"
-          srcset="@/assets/home/white-grain@2x.png 2x,
-              @/assets/home/white-grain@3x.png 3x"
-        /> -->
+        <v-img src="@/assets/home/product.png" />
       </v-col>
       <v-col class="text-center pa-0" cols="7"> </v-col>
-      <v-row align="center" justify="center">
-        <v-col class="text-center pa-0" cols="12">
-          <v-parallax src="@/assets/home/sea-bottom.png">
-            <v-row align="center" justify="center">
-              <v-col class="text-center" cols="12">
-                <h1 class="text-h3 font-weight-bold mb-4">
-                  성능 또한 친환경성 만큼 중요합니다.
-                </h1>
-                <v-chip class="ma-2"
-                  >#활성탄 대비 3배 높은 중금속 흡착력</v-chip
-                >
-                <v-chip class="ma-2"
-                  >#기존 활성탄이 흡착할 수 없는 니켈 (Ni), 아연 (Zn) 흡착
-                  가능</v-chip
-                >
-              </v-col>
-            </v-row>
-            <v-row align="center" justify="center">
-              <v-col class="text-center" cols="12">
-                <v-btn outlined rounded> View more </v-btn>
-              </v-col>
-            </v-row>
-          </v-parallax>
-        </v-col>
-      </v-row>
+    </v-row>
+    <v-row align="center" justify="center">
+      <v-img :aspect-ratio="1920 / 720" src="@/assets/home/sea-bottom.png">
+        <v-layout
+          column
+          align-center
+          justify-center
+          class="white--text"
+          fill-height
+        >
+          <v-row align="center" justify="center">
+            <div class="text-center">
+              <h1 class="text-h3 font-weight-bold mb-4">
+                성능 또한 친환경성 만큼 중요합니다.
+              </h1>
+              <v-chip class="ma-2">#활성탄 대비 3배 높은 중금속 흡착력</v-chip>
+              <v-chip class="ma-2"
+                >#기존 활성탄이 흡착할 수 없는 니켈 (Ni), 아연 (Zn) 흡착
+                가능</v-chip
+              >
+            </div>
+          </v-row>
+          <v-row align="center" justify="center">
+            <div class="text-center">
+              <v-btn outlined rounded> View more </v-btn>
+            </div>
+          </v-row>
+        </v-layout>
+      </v-img>
     </v-row>
     <the-footer />
   </div>
@@ -93,6 +87,7 @@
 import TheAppBar from '@/components/TheAppBar'
 import CountNumber from '@/components/CountNumber'
 import TheFooter from '@/components/TheFooter'
+import Slider from '@/components/Slider'
 
 export default {
   name: 'Home',
@@ -100,7 +95,8 @@ export default {
   components: {
     TheAppBar,
     CountNumber,
-    TheFooter
+    TheFooter,
+    Slider
   }
 }
 </script>
