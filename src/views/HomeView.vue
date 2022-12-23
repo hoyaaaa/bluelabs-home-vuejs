@@ -81,13 +81,13 @@
         <v-col class="pa-0" cols="5">
           <v-img src="@/assets/home/row3-product.png" />
         </v-col>
-        <v-col class="py-0 pl-16" cols="7">
+        <v-col class="py-0" cols="6" offset="1">
           <div class="d-flex flex-column justify-space-between fill-height">
             <div />
-            <div class="pl-8">
+            <div class="">
               <img src="@/assets/home/row3-blueball.png" />
             </div>
-            <div class="pretendard text-h6 font-black pl-8">
+            <div class="pretendard text-h6 font-black">
               <span class="font-blue font-bold">블루랩스</span>는
               <br />
               <span class="font-bold">대량의 굴 껍데기를 자원화</span>하여
