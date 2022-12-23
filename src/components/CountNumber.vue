@@ -3,8 +3,8 @@
     :from="0"
     :to="to"
     :format="theFormat"
-    :duration="10"
-    easing="Power1.easeInOut"
+    :duration="5"
+    easing="Power1.easeOut"
   />
 </template>
 

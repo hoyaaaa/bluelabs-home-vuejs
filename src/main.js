@@ -6,6 +6,8 @@ import vuetify from './plugins/vuetify'
 import vuenumber from './plugins/vuenumber'
 import swiper from './plugins/swiper'
 
+import './main.css'
+
 Vue.config.productionTip = false
 
 new Vue({
