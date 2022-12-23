@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-row align="center" justify="center">
-      <v-img :aspect-ratio="1920 / 1000" src="@/assets/home/sea-top.png">
+      <v-img :aspect-ratio="1920 / 1000" src="@/assets/home/row1-sea.png">
         <v-layout class="flex-column fill-height mx-16">
           <v-row align="center" justify="center">
             <v-col class="pa-0" cols="12">
@@ -16,6 +16,7 @@
     </v-row>
     <v-responsive :aspect-ratio="1920 / 1548">
       <div
+        class="row2"
         style="
           display: flex;
           flex-direction: column;
@@ -26,7 +27,7 @@
         <div></div>
         <div align="center" justify="center">
           <v-col class="text-center py-2" cols="12">
-            <img src="@/assets/home/oyster-icon.png" />
+            <img src="@/assets/home/row2-oyster-icon.png" />
             <div class="pretendard font-bold font-black text-h3 mt-4">
               연 평균 굴 생산 과정에서 발생하는 굴 패각량
               <span class="font-blue">약 28만 톤</span>
@@ -39,12 +40,12 @@
         </div>
         <div>
           <v-col class="py-2" cols="10" offset="2">
-            <v-img src="@/assets/home/oyster.png" />
+            <v-img src="@/assets/home/row2-oyster.png" />
           </v-col>
         </div>
         <div class="d-flex">
           <v-col class="py-2" cols="4" offset="2">
-            <v-img src="@/assets/home/graph.png" />
+            <v-img src="@/assets/home/row2-graph.png" />
           </v-col>
           <v-col class="py-2" cols="6" style="align-self: flex-end">
             <div class="pb-10">
@@ -75,56 +76,66 @@
         <div></div>
       </div>
     </v-responsive>
-    <v-row class="row3">
-      <v-col class="text-center pa-0" cols="5">
-        <v-img src="@/assets/home/product.png" />
-      </v-col>
-      <v-col class="text-center pa-0" cols="7">
-        <v-row class="row3">
-          <v-col class="text-center pa-0" cols="12">
-            <div>BLUE BALL</div>
-            <div>
-              블루 랩스는
+    <div class="row3">
+      <v-row>
+        <v-col class="pa-0" cols="5">
+          <v-img src="@/assets/home/row3-product.png" />
+        </v-col>
+        <v-col class="py-0 pl-16" cols="7">
+          <div class="d-flex flex-column justify-space-between fill-height">
+            <div />
+            <div class="pl-8">
+              <img src="@/assets/home/row3-blueball.png" />
+            </div>
+            <div class="pretendard text-h6 font-black pl-8">
+              <span class="font-blue font-bold">블루랩스</span>는
               <br />
-              대량의 굴 껍데기를 자원화하여
+              <span class="font-bold">대량의 굴 껍데기를 자원화</span>하여
               <br />
               사회적 문제를 해결과 동시에 완벽한 업사이클링을
               <br />
               실현하고자 합니다.
             </div>
-          </v-col>
-        </v-row>
-      </v-col>
-    </v-row>
-    <v-row align="center" justify="center">
-      <v-img :aspect-ratio="1920 / 720" src="@/assets/home/sea-bottom.png">
-        <v-layout
-          column
-          align-center
-          justify-center
-          class="white--text"
-          fill-height
+            <div>
+              <blueball-step />
+            </div>
+            <div />
+          </div>
+        </v-col>
+      </v-row>
+    </div>
+    <div class="row4">
+      <v-img :aspect-ratio="1920 / 720" src="@/assets/home/row4-sea.png">
+        <div
+          class="
+            d-flex
+            flex-column
+            justify-space-between
+            align-center
+            fill-height
+          "
         >
-          <v-row align="center" justify="center">
-            <div class="text-center">
-              <h1 class="text-h3 font-weight-bold mb-4">
-                성능 또한 친환경성 만큼 중요합니다.
-              </h1>
-              <v-chip class="ma-2">#활성탄 대비 3배 높은 중금속 흡착력</v-chip>
-              <v-chip class="ma-2"
-                >#기존 활성탄이 흡착할 수 없는 니켈 (Ni), 아연 (Zn) 흡착
-                가능</v-chip
-              >
+          <div />
+          <div>
+            <div
+              class="pretendard font-white text-h3 font-bold mb-4 text-center"
+              style="text-shadow: 0 0 6.6px rgba(77, 127, 166, 0.36)"
+            >
+              <span class="font-blue">성능</span> 또한
+              <span class="font-green">친환경성</span> 만큼 중요합니다.
             </div>
-          </v-row>
-          <v-row align="center" justify="center">
-            <div class="text-center">
-              <v-btn outlined rounded> View more </v-btn>
+            <div class="d-flex">
+              <v-img src="@/assets/home/row4-chip1.png" class="ma-2" />
+              <v-img src="@/assets/home/row4-chip2.png" class="ma-2" />
             </div>
-          </v-row>
-        </v-layout>
+          </div>
+          <div class="text-center">
+            <v-img src="@/assets/home/row4-btn.png" class="ma-2" />
+          </div>
+          <div />
+        </div>
       </v-img>
-    </v-row>
+    </div>
     <the-footer />
   </div>
 </template>
@@ -134,6 +145,7 @@ import TheAppBar from '@/components/TheAppBar'
 import CountNumber from '@/components/CountNumber'
 import TheFooter from '@/components/TheFooter'
 import Slider from '@/components/Slider'
+import BlueballStep from '@/components/Home/BlueballStep'
 
 export default {
   name: 'Home',
@@ -142,7 +154,8 @@ export default {
     TheAppBar,
     CountNumber,
     TheFooter,
-    Slider
+    Slider,
+    BlueballStep
   }
 }
 </script>
@@ -162,12 +175,24 @@ export default {
   font-weight: bold !important;
 }
 
+.row4 .font-blue {
+  color: #007bc7 !important;
+}
+
+.font-green {
+  color: #108753 !important;
+}
+
 .font-blue {
   color: #004ea2 !important;
 }
 
 .font-black {
   color: #131313 !important;
+}
+
+.font-white {
+  color: #ffffff !important;
 }
 
 .row3 {
