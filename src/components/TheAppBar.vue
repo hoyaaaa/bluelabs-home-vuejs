@@ -4,29 +4,31 @@
     :color="color"
     :dark="dark"
     :absolute="absolute"
-    style="border-bottom-color: rgba(255, 255, 255) !important"
-    elevation="0"
     height="100"
+    elevation="0"
+    class="app-bar px-14"
   >
-    <img src="@/assets/footer/white-logo.png" />
-    <v-spacer></v-spacer>
-
-    <v-card color="transparent" class="px-16" elevation="0">
+    <div class="fill-height">
+      <v-btn href="#" text class="btn barlow font-link text-body-1 px-8">
+        <img src="@/assets/footer/white-logo.png" height="30" />
+      </v-btn>
+    </div>
+    <v-spacer />
+    <div class="fill-height">
       <v-btn
         v-for="link in links"
         :key="link"
-        color="white"
         text
-        class="my-2 px-0 mr-4"
+        href="#"
+        class="btn barlow font-link text-body-1 px-8"
       >
         {{ link }}
       </v-btn>
-    </v-card>
-
-    <v-spacer></v-spacer>
-    <v-card color="transparent" class="px-16" elevation="0">
-      <v-btn color="white" text class="my-2 px-0 mr-4"> LOGIN </v-btn>
-    </v-card>
+    </div>
+    <v-spacer />
+    <div class="fill-height">
+      <v-btn class="btn barlow font-login text-body-1 px-8" text> LOGIN </v-btn>
+    </div>
   </v-app-bar>
 </template>
 
@@ -52,3 +54,33 @@ export default {
   })
 }
 </script>
+
+<style scoped>
+.app-bar {
+  border-bottom-color: rgba(255, 255, 255, 0.3) !important;
+  z-index: 10 !important;
+}
+
+.barlow {
+  font-family: Barlow !important;
+  font-weight: 600 !important;
+  font-stretch: condensed !important;
+}
+
+.btn {
+  height: 100% !important;
+}
+
+.font-link {
+  line-height: 1.5 !important;
+  letter-spacing: normal !important;
+  color: #ffffff !important;
+}
+
+.font-login {
+  line-height: 2.28 !important;
+  letter-spacing: -0.45px !important;
+  color: #979797 !important;
+  right: 300px;
+}
+</style>

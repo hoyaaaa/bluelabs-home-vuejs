@@ -58,10 +58,15 @@
             <div class="pt-10">
               <span class="pretendard text-h5">연간</span>
               <br />
+              <br />
               <count-number
                 class="barlow font-blue text-h1 text-right"
                 v-bind:to="4500000000"
-                style="width: 30rem; display: inline-block"
+                style="
+                  width: 30rem;
+                  display: inline-block;
+                  letter-spacing: -2.51px;
+                "
               />
               <span
                 class="pretendard font-bold text-h2"

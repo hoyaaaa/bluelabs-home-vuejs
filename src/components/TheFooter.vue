@@ -14,7 +14,7 @@
             color="white"
             text
             height="100"
-            class="my-0 py-0 px-0 mr-4 barlow text-body-1 text-none"
+            class="my-0 py-0 px-4 barlow text-body-1 text-none"
           >
             {{ link }}
           </v-btn>
