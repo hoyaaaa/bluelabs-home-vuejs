@@ -63,7 +63,7 @@
                 id="count"
                 class="barlow font-blue text-h1 text-right"
                 v-bind:to="4500000000"
-                v-bind:play="countStart"
+                v-bind:play="start.count"
                 style="
                   width: 30rem;
                   display: inline-block;
@@ -103,8 +103,8 @@
               <br />
               실현하고자 합니다.
             </div>
-            <div>
-              <blueball-step />
+            <div id="slider">
+              <blueball-step v-bind:play="start.slider" />
             </div>
             <div />
           </div>
@@ -165,28 +165,35 @@ export default {
   },
   data() {
     return {
-      countStart: false
+      start: {
+        count: false,
+        slider: false
+      }
     }
   },
   created: function () {
-    window.addEventListener('scroll', this.elementOnView)
+    window.addEventListener('scroll', this.elementOnView('count'))
+    window.addEventListener('scroll', this.elementOnView('slider'))
   },
   destroyed: function () {
-    window.removeEventListener('scroll', this.elementOnView)
+    window.removeEventListener('scroll', this.elementOnView('count'))
+    window.addEventListener('scroll', this.elementOnView('slider'))
   },
   methods: {
-    elementOnView(e) {
-      const docViewTop = document.documentElement.scrollTop
-      const docViewBottom = docViewTop + document.documentElement.clientHeight
-      const oyster = document.getElementById('count')
-      const bodyRect = document.body.getBoundingClientRect()
-      const elemRect = oyster.getBoundingClientRect()
-      const elemTop = elemRect.top - bodyRect.top
-      const elemBottom = elemTop + oyster.offsetHeight
-
-      this.countStart =
-        this.countStart ||
-        (elemBottom <= docViewBottom && elemTop >= docViewTop)
+    elementOnView(id) {
+      const that = this
+      return function (e) {
+        const docViewTop = document.documentElement.scrollTop
+        const docViewBottom = docViewTop + document.documentElement.clientHeight
+        const elem = document.getElementById(id)
+        const bodyRect = document.body.getBoundingClientRect()
+        const elemRect = elem.getBoundingClientRect()
+        const elemTop = elemRect.top - bodyRect.top
+        const elemBottom = elemTop + elem.offsetHeight
+        that.start[id] =
+          that.start[id] ||
+          (elemBottom <= docViewBottom && elemTop >= docViewTop)
+      }
     }
   }
 }

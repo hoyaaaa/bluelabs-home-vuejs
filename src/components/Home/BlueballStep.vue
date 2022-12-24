@@ -1,5 +1,5 @@
 <template>
-  <swiper class="blueball-step-slider" :options="swiperOptions">
+  <swiper ref="swiper" class="blueball-step-slider" :options="swiperOptions">
     <swiper-slide :key="index" v-for="(step, index) in steps">
       <img :src="getImageSrc(step)" v-bind:alt="step" />
     </swiper-slide>
@@ -23,11 +23,25 @@ export default {
     Swiper,
     SwiperSlide
   },
+  props: {
+    play: {
+      type: Boolean,
+      required: true
+    }
+  },
+  watch: {
+    play() {
+      if (this.play) {
+        this.playSlider()
+      }
+    }
+  },
   data() {
     return {
       swiperOptions: {
         autoplay: {
-          delay: 5000
+          delay: 3000,
+          pauseOnMouseEnter: true
         },
         pagination: {
           el: '.swiper-pagination',
@@ -46,9 +60,15 @@ export default {
       ]
     }
   },
+  mounted: function () {
+    this.$refs.swiper.$swiper.autoplay.stop()
+  },
   methods: {
     getImageSrc(path) {
       return require('@/assets/' + path)
+    },
+    playSlider() {
+      this.$refs.swiper.$swiper.autoplay.start()
     }
   }
 }
