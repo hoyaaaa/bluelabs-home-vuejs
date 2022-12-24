@@ -3,8 +3,11 @@
     :from="0"
     :to="to"
     :format="theFormat"
-    :duration="5"
+    :duration="3"
+    ref="count"
+    animationPaused
     easing="Power1.easeOut"
+    @complete="completed"
   />
 </template>
 
@@ -15,6 +18,17 @@ export default {
     to: {
       type: Number,
       required: true
+    },
+    play: {
+      type: Boolean,
+      required: true
+    }
+  },
+  watch: {
+    play() {
+      if (this.play) {
+        this.playCount()
+      }
     }
   },
   methods: {
@@ -25,7 +39,11 @@ export default {
         .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
     },
     completed() {
-      console.log('Animation ends!')
+      console.log('Count ends!')
+    },
+    playCount() {
+      console.log('Count starts!')
+      this.$refs.count.play()
     }
   }
 }

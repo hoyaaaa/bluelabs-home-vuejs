@@ -60,8 +60,10 @@
               <br />
               <br />
               <count-number
+                id="count"
                 class="barlow font-blue text-h1 text-right"
                 v-bind:to="4500000000"
+                v-bind:play="countStart"
                 style="
                   width: 30rem;
                   display: inline-block;
@@ -154,13 +156,38 @@ import BlueballStep from '@/components/Home/BlueballStep.vue'
 
 export default {
   name: 'Home',
-
   components: {
     TheAppBar,
     CountNumber,
     TheFooter,
     MainSlider,
     BlueballStep
+  },
+  data() {
+    return {
+      countStart: false
+    }
+  },
+  created: function () {
+    window.addEventListener('scroll', this.elementOnView)
+  },
+  destroyed: function () {
+    window.removeEventListener('scroll', this.elementOnView)
+  },
+  methods: {
+    elementOnView(e) {
+      const docViewTop = document.documentElement.scrollTop
+      const docViewBottom = docViewTop + document.documentElement.clientHeight
+      const oyster = document.getElementById('count')
+      const bodyRect = document.body.getBoundingClientRect()
+      const elemRect = oyster.getBoundingClientRect()
+      const elemTop = elemRect.top - bodyRect.top
+      const elemBottom = elemTop + oyster.offsetHeight
+
+      this.countStart =
+        this.countStart ||
+        (elemBottom <= docViewBottom && elemTop >= docViewTop)
+    }
   }
 }
 </script>
