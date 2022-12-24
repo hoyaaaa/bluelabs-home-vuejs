@@ -1,10 +1,12 @@
 <template>
-  <swiper class="mySwiper" :options="swiperOptions">
-    <swiper-slide>Slide 1</swiper-slide><swiper-slide>Slide 2</swiper-slide
-    ><swiper-slide>Slide 3</swiper-slide><swiper-slide>Slide 4</swiper-slide
-    ><swiper-slide>Slide 5</swiper-slide><swiper-slide>Slide 6</swiper-slide
-    ><swiper-slide>Slide 7</swiper-slide><swiper-slide>Slide 8</swiper-slide
-    ><swiper-slide>Slide 9</swiper-slide>
+  <swiper class="main-slider" :options="swiperOptions">
+    <swiper-slide
+      class="barlow text-h1 text-uppercase"
+      :key="index"
+      v-for="(element, index) in elements"
+    >
+      {{ element }}
+    </swiper-slide>
 
     <!-- pagination -->
     <div class="swiper-pagination" slot="pagination"></div>
@@ -14,6 +16,7 @@
     <div class="swiper-button-next swiper-btn-next" slot="button-next"></div>
   </swiper>
 </template>
+
 <script>
 import 'swiper/css/swiper.css'
 
@@ -27,10 +30,10 @@ export default {
   data() {
     return {
       swiperOptions: {
-        // loop: true,
-        // autoplay:{
-        //   delay:1000
-        // },
+        loop: false,
+        autoplay: {
+          delay: 3000
+        },
         pagination: {
           el: '.swiper-pagination'
         },
@@ -38,16 +41,27 @@ export default {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
         }
-      }
+      },
+      elements: ['Safer filter for a bluer planet.']
     }
   }
 }
 </script>
 
 <style scoped>
-.mySwiper {
+.barlow {
+  font-family: 'Barlow' !important;
+  font-weight: 600 !important;
+  font-stretch: condensed !important;
+  line-height: 0.43 !important;
+}
+
+.main-slider {
   width: 100%;
   height: 100%;
+  --swiper-navigation-size: 5rem;
+  --swiper-navigation-color: #ffffff;
+  --swiper-theme-color: #00a0e9;
 }
 
 .swiper {
@@ -76,10 +90,29 @@ export default {
   align-items: center;
 }
 
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.swiper-pagination {
+  bottom: 5%;
+}
+
+.swiper-button-prev {
+  left: 15%;
+}
+
+.swiper-button-next {
+  right: 15%;
+}
+</style>
+
+<style>
+.main-slider .swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  background: #ffffff;
+  opacity: 1;
+  margin: 0 10px !important;
+}
+
+.main-slider .swiper-pagination-bullet-active {
+  background: #00a0e9;
 }
 </style>

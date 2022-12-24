@@ -1,16 +1,7 @@
 <template>
   <swiper class="blueball-step-slider" :options="swiperOptions">
-    <swiper-slide>
-      <img src="@/assets/blueball-step/step1.png" />
-    </swiper-slide>
-    <swiper-slide>
-      <img src="@/assets/blueball-step/step2.png" />
-    </swiper-slide>
-    <swiper-slide>
-      <img src="@/assets/blueball-step/step3.png" />
-    </swiper-slide>
-    <swiper-slide>
-      <img src="@/assets/blueball-step/step4.png" />
+    <swiper-slide :key="index" v-for="(step, index) in steps">
+      <img :src="getImageSrc(step)" v-bind:alt="step" />
     </swiper-slide>
 
     <!-- pagination -->
@@ -21,8 +12,9 @@
     <div class="swiper-button-next swiper-btn-next" slot="button-next"></div>
   </swiper>
 </template>
+
 <script>
-// import 'swiper/css/swiper.css'
+import 'swiper/css/swiper.css'
 
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 
@@ -34,10 +26,9 @@ export default {
   data() {
     return {
       swiperOptions: {
-        // loop: true,
-        // autoplay:{
-        //   delay:1000
-        // },
+        autoplay: {
+          delay: 5000
+        },
         pagination: {
           el: '.swiper-pagination',
           type: 'progressbar'
@@ -46,7 +37,18 @@ export default {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
         }
-      }
+      },
+      steps: [
+        'blueball-step/step1.png',
+        'blueball-step/step2.png',
+        'blueball-step/step3.png',
+        'blueball-step/step4.png'
+      ]
+    }
+  },
+  methods: {
+    getImageSrc(path) {
+      return require('@/assets/' + path)
     }
   }
 }

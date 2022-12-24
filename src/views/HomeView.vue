@@ -8,7 +8,7 @@
               <the-app-bar absolute dark v-bind:color="'transparent'" />
             </v-col>
             <v-col class="flex-column fill-height pa-0" cols="12">
-              <slider />
+              <main-slider />
             </v-col>
           </v-row>
         </v-layout>
@@ -84,10 +84,10 @@
         <v-col class="py-0" cols="6" offset="1">
           <div class="d-flex flex-column justify-space-between fill-height">
             <div />
-            <div class="">
+            <div class="pl-8">
               <img src="@/assets/home/row3-blueball.png" />
             </div>
-            <div class="pretendard text-h6 font-black">
+            <div class="pretendard text-h6 font-black pl-8">
               <span class="font-blue font-bold">블루랩스</span>는
               <br />
               <span class="font-bold">대량의 굴 껍데기를 자원화</span>하여
@@ -141,11 +141,11 @@
 </template>
 
 <script>
-import TheAppBar from '@/components/TheAppBar'
-import CountNumber from '@/components/CountNumber'
-import TheFooter from '@/components/TheFooter'
-import Slider from '@/components/Slider'
-import BlueballStep from '@/components/Home/BlueballStep'
+import TheAppBar from '@/components/TheAppBar.vue'
+import CountNumber from '@/components/CountNumber.vue'
+import TheFooter from '@/components/TheFooter.vue'
+import MainSlider from '@/components/Home/MainSlider.vue'
+import BlueballStep from '@/components/Home/BlueballStep.vue'
 
 export default {
   name: 'Home',
@@ -154,7 +154,7 @@ export default {
     TheAppBar,
     CountNumber,
     TheFooter,
-    Slider,
+    MainSlider,
     BlueballStep
   }
 }
@@ -169,6 +169,7 @@ export default {
   font-family: 'Barlow' !important;
   font-weight: 600 !important;
   font-stretch: condensed !important;
+  line-height: 0.43 !important;
 }
 
 .font-bold {
