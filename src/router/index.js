@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import MaintananceView from '../views/MaintananceView.vue'
+import MaintenanceView from '../views/MaintenanceView.vue'
 
 Vue.use(VueRouter)
 
 // eslint-disable-next-line
-const routes = (process.env.NODE_ENV === 'maintanance') ? [
+const routes = (process.env.NODE_ENV === 'maintenance') ? [
   {
     path: '/',
-    name: 'maintanance',
-    component: MaintananceView
+    name: 'maintenance',
+    component: MaintenanceView
   }
 ] : [
   {
