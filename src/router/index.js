@@ -5,7 +5,8 @@ import MaintananceView from '../views/MaintananceView.vue'
 
 Vue.use(VueRouter)
 
-const routes = (process.env.NODE_ENV === "maintanance") ? [
+// eslint-disable-next-line
+const routes = (process.env.NODE_ENV === 'maintanance') ? [
   {
     path: '/',
     name: 'maintanance',
