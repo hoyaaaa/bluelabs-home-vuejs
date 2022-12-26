@@ -1,14 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import HomeView from '../views/HomeView.vue'
 import MaintananceView from '../views/MaintananceView.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
+const routes = (process.env.NODE_ENV === "maintanance") ? [
   {
     path: '/',
     name: 'maintanance',
     component: MaintananceView
+  }
+] : [
+  {
+    path: '/',
+    name: 'home',
+    component: HomeView
   }
 ]
 
