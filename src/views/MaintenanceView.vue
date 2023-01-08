@@ -14,7 +14,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 @import url('https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text');
 
 body {
