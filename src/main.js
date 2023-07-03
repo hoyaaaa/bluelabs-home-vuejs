@@ -5,10 +5,14 @@ import store from './store'
 import vuetify from './plugins/vuetify'
 import vuenumber from './plugins/vuenumber'
 import swiper from './plugins/swiper'
+import request from './utils/request'
+import cookie from './utils/cookie'
 
 import './main.css'
 
 Vue.config.productionTip = false
+Vue.prototype.$axios = request
+Vue.prototype.$cookie = cookie
 
 new Vue({
   router,
